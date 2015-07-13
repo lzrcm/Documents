@@ -15,6 +15,13 @@
 	<td>Leo</td>
 	<td></td>
 </tr>
+<tr>
+	<td>1.0.1</td>
+	<td>增加测试通道</td>
+	<td>2015/7/13 16:37:23</td>
+	<td>Leo</td>
+	<td></td>
+</tr>
 </tbody></table>
 
 ### 1.引言 ###
@@ -47,7 +54,7 @@
 	<td><B>数据</B></td>
 </tr>
 <tr>
-	<th rowspan="22">仪器信息</th>
+	<th rowspan="24">仪器信息</th>
 	<th rowspan="2">获取仪器型号</td>
 	<td>电脑</td>
 	<td>0x01</td>
@@ -166,6 +173,17 @@
 <tr>
 	<td>单片机</td>
 	<td>0x0B</td>
+	<td>≤14 Bytes ASCII or none</td>
+</tr>
+<tr>
+	<th rowspan="2">测试通道 I</td>
+	<td>电脑</td>
+	<td>0x40</td>
+	<td>----</td>
+</tr>
+<tr>
+	<td>单片机</td>
+	<td>0x40</td>
 	<td>≤14 Bytes ASCII or none</td>
 </tr>
 <tr>
@@ -492,3 +510,5 @@
 (7)	读取时间时，不需要数据。修改时间时，数据为年（1 Byte） + 月（1 Byte） + 日（1 Byte） + 时（1 Byte） + 分（1 Byte） + 秒（1 Byte）
 
 (8)	读取或修改时间数据均为年（1 Byte） + 月（1 Byte） + 日（1 Byte） + 时（1 Byte） + 分（1 Byte） + 秒（1 Byte）。如果不能进行时间操作，则为空的数据
+
+(9) 测试通道 I，电脑发送命令，则单片机开始传输数据；再发一次命令，则单片机停止传输数据。
